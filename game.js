@@ -15,36 +15,39 @@ canvas.width = 600;
 canvas.height = 600;
 
 //Vertical lines
-ctx.strokeRect(200, 25, 1, 550);
-ctx.strokeRect(400, 25, 1, 550);
+ctx.strokeRect(200, 25, 2, 550);
+ctx.strokeRect(400, 25, 2, 550);
 
 //Horizontal lines
-ctx.strokeRect(25, 200, 550, 1);
-ctx.strokeRect(25, 400, 550, 1);
+ctx.strokeRect(25, 200, 550, 2);
+ctx.strokeRect(25, 400, 550, 2);
 
-spaceOne.fillStyle = "green";
-spaceOne.fillRect(0, 0, 200, 200);
 
-spaceTwo.fillStyle = "blue";
-spaceTwo.fillRect(200, 0, 200, 200);
+function getMousePosition(canvas, event) {
+    let rect = canvas.getBoundingClientRect();
+    let x = event.clientX - rect.left;
+    let y = event.clientY - rect.top;
+    console.log(
+        "Coordinate x: " + x,
+        "Coordinate y: " + y);
+    if (x < 200 && y < 200) {
+        ctx.strokeStyle = "red";
+        ctx.beginPath();
+        ctx.moveTo(30, 30);
+        ctx.lineTo(180, 180);
+        ctx.lineWidth = 5;
+        ctx.stroke();
+        ctx.beginPath();
+        ctx.moveTo(180, 30);
+        ctx.lineTo(30, 180);
+        ctx.lineWidth = 5;
+        ctx.stroke();
+    }
+}
 
-spaceThree.fillStyle = "green";
-spaceThree.fillRect(400, 0, 200, 200);
+let canvasElem = document.querySelector("canvas");
 
-spaceFour.fillStyle = "blue";
-spaceFour.fillRect(0, 200, 200, 200);
+canvas.addEventListener("click", function (e) {
 
-spaceFive.fillStyle = "green";
-spaceOne.fillRect(200, 200, 200, 200);
-
-spaceSix.fillStyle = "blue";
-spaceSix.fillRect(400, 200, 200, 200);
-
-spaceSeven.fillStyle = "green";
-spaceSeven.fillRect(0, 400, 200, 200);
-
-spaceEight.fillStyle = "blue";
-spaceEight.fillRect(200, 400, 200, 200);
-
-spaceNine.fillStyle = "green";
-spaceNine.fillRect(400, 400, 200, 200);
+    getMousePosition(canvasElem, e);
+}); 
