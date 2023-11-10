@@ -4,11 +4,18 @@ let ctx = canvas.getContext("2d");
 
 // Player X is the starting player by default
 let player = "x";
+let pointsX = 1;
+let pointsO = 1;
 
 document.getElementById("playerX").style.color = "red";
 document.getElementById("playerO").style.color = "blue";
 document.getElementById("playerX").style.fontSize = "50px";
 document.getElementById("playerO").style.fontSize = "30px";
+
+document.getElementById("pointsX").style.color = "red";
+document.getElementById("pointsO").style.color = "blue";
+document.getElementById("pointsX").style.fontSize = "30px";
+document.getElementById("pointsO").style.fontSize = "30px";
 
 //Size of game
 canvas.width = 600;
@@ -24,8 +31,6 @@ ctx.strokeRect(400, 25, 2, 550);
 ctx.strokeRect(25, 200, 550, 2);
 ctx.strokeRect(25, 400, 550, 2);
 
-
-
 let sqOne = null;
 let sqTwo = null;
 let sqThree = null;
@@ -36,27 +41,105 @@ let sqSeven = null;
 let sqEight = null;
 let sqNine = null;
 
-
-
 function getMousePosition(canvas, event) {
     let rect = canvas.getBoundingClientRect();
     let x = event.clientX - rect.left;
     let y = event.clientY - rect.top;
 
-    if (sqOne == "red" && sqTwo == "red" && sqThree == "red")
-    {
+    //Check if Player X has three in a row
+    if (sqOne == "red" && sqTwo == "red" && sqThree == "red") {
         alert("Player X has won!")
-        document.getElementById("pointBtn").addEventListener("click", addPoints);
+        document.getElementById("pointBtn").addEventListener("click", addPointsRed);
         return
     }
-    if (sqOne == "red" && sqFive == "red" && sqNine == "red")
-    {
+
+    if (sqFour == "red" && sqFive == "red" && sqSix == "red") {
         alert("Player X has won!")
+        document.getElementById("pointBtn").addEventListener("click", addPointsRed);
         return
     }
-    if (sqOne == "red" && sqFour == "red" && sqSeven == "red")
-    {
+
+    if (sqSeven == "red" && sqEight == "red" && sqNine == "red") {
         alert("Player X has won!")
+        document.getElementById("pointBtn").addEventListener("click", addPointsRed);
+        return
+    }
+
+    if (sqOne == "red" && sqFour == "red" && sqSeven == "red") {
+        alert("Player X has won!")
+        document.getElementById("pointBtn").addEventListener("click", addPointsRed);
+        return
+    }
+
+    if (sqTwo == "red" && sqFive == "red" && sqEight == "red") {
+        alert("Player X has won!")
+        document.getElementById("pointBtn").addEventListener("click", addPointsRed);
+        return
+    }
+
+    if (sqThree == "red" && sqSix == "red" && sqNine == "red") {
+        alert("Player X has won!")
+        document.getElementById("pointBtn").addEventListener("click", addPointsRed);
+        return
+    }
+
+    if (sqOne == "red" && sqFive == "red" && sqNine == "red") {
+        alert("Player X has won!")
+        document.getElementById("pointBtn").addEventListener("click", addPointsRed);
+        return
+    }
+
+    if (sqThree == "red" && sqFive == "red" && sqSeven == "red") {
+        alert("Player X has won!")
+        document.getElementById("pointBtn").addEventListener("click", addPointsRed);
+        return
+    }
+
+    //Check if Player O has three in a row
+    if (sqOne == "blue" && sqTwo == "blue" && sqThree == "blue") {
+        alert("Player O has won!")
+        document.getElementById("pointBtn").addEventListener("click", addPointsBlue);
+        return
+    }
+
+    if (sqFour == "blue" && sqFive == "blue" && sqSix == "blue") {
+        alert("Player O has won!")
+        document.getElementById("pointBtn").addEventListener("click", addPointsBlue);
+        return
+    }
+
+    if (sqSeven == "blue" && sqEight == "blue" && sqNine == "blue") {
+        alert("Player O has won!")
+        document.getElementById("pointBtn").addEventListener("click", addPointsBlue);
+        return
+    }
+
+    if (sqOne == "blue" && sqFour == "blue" && sqSeven == "blue") {
+        alert("Player O has won!")
+        document.getElementById("pointBtn").addEventListener("click", addPointsBlue);
+        return
+    }
+
+    if (sqTwo == "blue" && sqFive == "blue" && sqEight == "blue") {
+        alert("Player O has won!")
+        document.getElementById("pointBtn").addEventListener("click", addPointsBlue);
+        return
+    }
+
+    if (sqThree == "blue" && sqSix == "blue" && sqNine == "blue") {
+        alert("Player O has won!")
+        document.getElementById("pointBtn").addEventListener("click", addPointsBlue);
+        return
+    }
+    if (sqOne == "blue" && sqFive == "blue" && sqNine == "blue") {
+        alert("Player O has won!")
+        document.getElementById("pointBtn").addEventListener("click", addPointsBlue);
+        return
+    }
+
+    if (sqThree == "blue" && sqFive == "blue" && sqSeven == "blue") {
+        alert("Player O has won!")
+        document.getElementById("pointBtn").addEventListener("click", addPointsBlue);
         return
     }
 
@@ -79,7 +162,7 @@ function getMousePosition(canvas, event) {
 
             document.getElementById("playerO").style.fontSize = "50px";
             document.getElementById("playerX").style.fontSize = "30px";
-            sqOne = "red"
+            sqOne = "red";
             player = "o";
             return
         }
@@ -99,6 +182,7 @@ function getMousePosition(canvas, event) {
             document.getElementById("playerX").style.fontSize = "50px";
             document.getElementById("playerO").style.fontSize = "30px";
             player = "x";
+            sqOne = "blue";
             return
         }
 
@@ -122,7 +206,7 @@ function getMousePosition(canvas, event) {
 
             document.getElementById("playerO").style.fontSize = "50px";
             document.getElementById("playerX").style.fontSize = "30px";
-            sqTwo = "red"
+            sqTwo = "red";
             player = "o";
             return
         }
@@ -142,6 +226,7 @@ function getMousePosition(canvas, event) {
 
             document.getElementById("playerX").style.fontSize = "50px";
             document.getElementById("playerO").style.fontSize = "30px";
+            sqTwo = "blue";
             player = "x";
             return
         }
@@ -184,6 +269,7 @@ function getMousePosition(canvas, event) {
 
             document.getElementById("playerX").style.fontSize = "50px";
             document.getElementById("playerO").style.fontSize = "30px";
+            sqThree = "blue";
             player = "x";
             return
         }
@@ -208,7 +294,7 @@ function getMousePosition(canvas, event) {
 
             document.getElementById("playerO").style.fontSize = "50px";
             document.getElementById("playerX").style.fontSize = "30px";
-            sqFour = "red"
+            sqFour = "red";
             player = "o";
             return
         }
@@ -228,6 +314,7 @@ function getMousePosition(canvas, event) {
 
             document.getElementById("playerX").style.fontSize = "50px";
             document.getElementById("playerO").style.fontSize = "30px";
+            sqFour = "blue";
             player = "x";
             return
         }
@@ -253,7 +340,7 @@ function getMousePosition(canvas, event) {
 
             document.getElementById("playerO").style.fontSize = "50px";
             document.getElementById("playerX").style.fontSize = "30px";
-            sqFive = "red"
+            sqFive = "red";
             player = "o";
             return
         }
@@ -273,6 +360,7 @@ function getMousePosition(canvas, event) {
 
             document.getElementById("playerX").style.fontSize = "50px";
             document.getElementById("playerO").style.fontSize = "30px";
+            sqFive = "blue";
             player = "x";
             return
         }
@@ -297,7 +385,7 @@ function getMousePosition(canvas, event) {
 
             document.getElementById("playerO").style.fontSize = "50px";
             document.getElementById("playerX").style.fontSize = "30px";
-            sqSix = "red"
+            sqSix = "red";
             player = "o";
             return
         }
@@ -317,6 +405,7 @@ function getMousePosition(canvas, event) {
 
             document.getElementById("playerX").style.fontSize = "50px";
             document.getElementById("playerO").style.fontSize = "30px";
+            sqSix = "blue";
             player = "x";
             return
         }
@@ -340,7 +429,7 @@ function getMousePosition(canvas, event) {
 
             document.getElementById("playerO").style.fontSize = "50px";
             document.getElementById("playerX").style.fontSize = "30px";
-            sqSeven = "red"
+            sqSeven = "red";
             player = "o";
             return
         }
@@ -360,6 +449,7 @@ function getMousePosition(canvas, event) {
 
             document.getElementById("playerX").style.fontSize = "50px";
             document.getElementById("playerO").style.fontSize = "30px";
+            sqSeven = "blue";
             player = "x";
             return
         }
@@ -383,7 +473,7 @@ function getMousePosition(canvas, event) {
 
             document.getElementById("playerO").style.fontSize = "50px";
             document.getElementById("playerX").style.fontSize = "30px";
-            sqEight = "red"
+            sqEight = "red";
             player = "o";
             return
         }
@@ -403,6 +493,7 @@ function getMousePosition(canvas, event) {
 
             document.getElementById("playerX").style.fontSize = "50px";
             document.getElementById("playerO").style.fontSize = "30px";
+            sqEight = "blue";
             player = "x";
             return
         }
@@ -426,7 +517,7 @@ function getMousePosition(canvas, event) {
 
             document.getElementById("playerO").style.fontSize = "50px";
             document.getElementById("playerX").style.fontSize = "30px";
-            sqNine = "red"
+            sqNine = "red";
             player = "o";
             return
         }
@@ -446,6 +537,7 @@ function getMousePosition(canvas, event) {
 
             document.getElementById("playerX").style.fontSize = "50px";
             document.getElementById("playerO").style.fontSize = "30px";
+            sqNine = "blue";
             player = "x";
             return
         }
@@ -471,6 +563,7 @@ document.getElementById("clearBtn").addEventListener("click", clearGame);
 function clearGame() {
     ctx.strokeStyle = "black";
     ctx.clearRect(0, 0, 600, 600);
+    
     //Vertical lines
     ctx.strokeRect(200, 25, 2, 550);
     ctx.strokeRect(400, 25, 2, 550);
@@ -488,14 +581,21 @@ function clearGame() {
     sqSeven = null;
     sqEight = null;
     sqNine = null;
-    
+
     player = "x";
     document.getElementById("playerX").style.fontSize = "50px";
     document.getElementById("playerO").style.fontSize = "30px";
 }
 
 
-function addPoints() {
-    console.log("Points!")
-    
+function addPointsRed() {
+    let addPointsX = document.getElementById("pointsX")
+    addPointsX.innerText = "Player X points: " + pointsX++;
+
+}
+
+function addPointsBlue() {
+    let addPointsO = document.getElementById("pointsO")
+    addPointsO.innerText = "Player O points: " + pointsO++;
+
 }
