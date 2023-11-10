@@ -10,10 +10,13 @@ document.getElementById("playerO").style.color = "blue";
 document.getElementById("playerX").style.fontSize = "50px";
 document.getElementById("playerO").style.fontSize = "30px";
 
+//Size of game
 canvas.width = 600;
 canvas.height = 600;
 
 //Vertical lines
+ctx.strokeStyle = "black";
+ctx.lineWidth = 5;
 ctx.strokeRect(200, 25, 2, 550);
 ctx.strokeRect(400, 25, 2, 550);
 
@@ -22,10 +25,41 @@ ctx.strokeRect(25, 200, 550, 2);
 ctx.strokeRect(25, 400, 550, 2);
 
 
+
+let sqOne = null;
+let sqTwo = null;
+let sqThree = null;
+let sqFour = null;
+let sqFive = null;
+let sqSix = null;
+let sqSeven = null;
+let sqEight = null;
+let sqNine = null;
+
+
+
 function getMousePosition(canvas, event) {
     let rect = canvas.getBoundingClientRect();
     let x = event.clientX - rect.left;
     let y = event.clientY - rect.top;
+
+    if (sqOne == "red" && sqTwo == "red" && sqThree == "red")
+    {
+        alert("Player X has won!")
+        document.getElementById("pointBtn").addEventListener("click", addPoints);
+        return
+    }
+    if (sqOne == "red" && sqFive == "red" && sqNine == "red")
+    {
+        alert("Player X has won!")
+        return
+    }
+    if (sqOne == "red" && sqFour == "red" && sqSeven == "red")
+    {
+        alert("Player X has won!")
+        return
+    }
+
 
 
     if (player == "x") {
@@ -45,6 +79,7 @@ function getMousePosition(canvas, event) {
 
             document.getElementById("playerO").style.fontSize = "50px";
             document.getElementById("playerX").style.fontSize = "30px";
+            sqOne = "red"
             player = "o";
             return
         }
@@ -64,7 +99,7 @@ function getMousePosition(canvas, event) {
             document.getElementById("playerX").style.fontSize = "50px";
             document.getElementById("playerO").style.fontSize = "30px";
             player = "x";
-
+            return
         }
 
     }
@@ -87,6 +122,7 @@ function getMousePosition(canvas, event) {
 
             document.getElementById("playerO").style.fontSize = "50px";
             document.getElementById("playerX").style.fontSize = "30px";
+            sqTwo = "red"
             player = "o";
             return
         }
@@ -107,6 +143,7 @@ function getMousePosition(canvas, event) {
             document.getElementById("playerX").style.fontSize = "50px";
             document.getElementById("playerO").style.fontSize = "30px";
             player = "x";
+            return
         }
     }
 
@@ -127,6 +164,7 @@ function getMousePosition(canvas, event) {
 
             document.getElementById("playerO").style.fontSize = "50px";
             document.getElementById("playerX").style.fontSize = "30px";
+            sqThree = "red"
             player = "o";
             return
         }
@@ -147,6 +185,7 @@ function getMousePosition(canvas, event) {
             document.getElementById("playerX").style.fontSize = "50px";
             document.getElementById("playerO").style.fontSize = "30px";
             player = "x";
+            return
         }
     }
 
@@ -169,6 +208,7 @@ function getMousePosition(canvas, event) {
 
             document.getElementById("playerO").style.fontSize = "50px";
             document.getElementById("playerX").style.fontSize = "30px";
+            sqFour = "red"
             player = "o";
             return
         }
@@ -189,7 +229,7 @@ function getMousePosition(canvas, event) {
             document.getElementById("playerX").style.fontSize = "50px";
             document.getElementById("playerO").style.fontSize = "30px";
             player = "x";
-
+            return
         }
 
     }
@@ -213,6 +253,7 @@ function getMousePosition(canvas, event) {
 
             document.getElementById("playerO").style.fontSize = "50px";
             document.getElementById("playerX").style.fontSize = "30px";
+            sqFive = "red"
             player = "o";
             return
         }
@@ -233,7 +274,7 @@ function getMousePosition(canvas, event) {
             document.getElementById("playerX").style.fontSize = "50px";
             document.getElementById("playerO").style.fontSize = "30px";
             player = "x";
-
+            return
         }
 
     }
@@ -256,6 +297,7 @@ function getMousePosition(canvas, event) {
 
             document.getElementById("playerO").style.fontSize = "50px";
             document.getElementById("playerX").style.fontSize = "30px";
+            sqSix = "red"
             player = "o";
             return
         }
@@ -276,7 +318,7 @@ function getMousePosition(canvas, event) {
             document.getElementById("playerX").style.fontSize = "50px";
             document.getElementById("playerO").style.fontSize = "30px";
             player = "x";
-
+            return
         }
 
     }
@@ -298,6 +340,7 @@ function getMousePosition(canvas, event) {
 
             document.getElementById("playerO").style.fontSize = "50px";
             document.getElementById("playerX").style.fontSize = "30px";
+            sqSeven = "red"
             player = "o";
             return
         }
@@ -318,7 +361,7 @@ function getMousePosition(canvas, event) {
             document.getElementById("playerX").style.fontSize = "50px";
             document.getElementById("playerO").style.fontSize = "30px";
             player = "x";
-
+            return
         }
 
     }
@@ -340,6 +383,7 @@ function getMousePosition(canvas, event) {
 
             document.getElementById("playerO").style.fontSize = "50px";
             document.getElementById("playerX").style.fontSize = "30px";
+            sqEight = "red"
             player = "o";
             return
         }
@@ -360,7 +404,7 @@ function getMousePosition(canvas, event) {
             document.getElementById("playerX").style.fontSize = "50px";
             document.getElementById("playerO").style.fontSize = "30px";
             player = "x";
-
+            return
         }
 
     }
@@ -382,6 +426,7 @@ function getMousePosition(canvas, event) {
 
             document.getElementById("playerO").style.fontSize = "50px";
             document.getElementById("playerX").style.fontSize = "30px";
+            sqNine = "red"
             player = "o";
             return
         }
@@ -402,16 +447,14 @@ function getMousePosition(canvas, event) {
             document.getElementById("playerX").style.fontSize = "50px";
             document.getElementById("playerO").style.fontSize = "30px";
             player = "x";
-
+            return
         }
 
     }
 
 
+
 }
-
-
-
 
 let canvasElem = document.querySelector("canvas");
 
@@ -421,91 +464,38 @@ canvas.addEventListener("click", function (e) {
 });
 
 
-/*        //Printing O in the first square
-        if (x < 200 && y < 200) {
-            ctx.clearRect(0, 0, 199, 199);
-            ctx.beginPath();
-            ctx.arc(110, 110, 80, 2 * Math.PI, false);
-            ctx.fillStyle = "blue";
-            ctx.fill();
-            ctx.beginPath();
-            ctx.arc(110, 110, 70, 2 * Math.PI, false);
-            ctx.fillStyle = "white";
-            ctx.fill();
-            
-            document.getElementById("x").style.fontSize = "50px";
-            document.getElementById("o").style.fontSize = "30px";
-            player = "x";
-            
-        }
 
-        //Printing O in the second square
-        if (x > 200 && x < 400 &&  y < 200) {
-            ctx.clearRect(203, 0, 196, 199);
-            ctx.beginPath();
-            ctx.arc(300, 110, 80, 2 * Math.PI, false);
-            ctx.fillStyle = "blue";
-            ctx.fill();
-            ctx.beginPath();
-            ctx.arc(300, 110, 70, 2 * Math.PI, false);
-            ctx.fillStyle = "white";
-            ctx.fill();
-
-            document.getElementById("x").style.fontSize = "50px";
-            document.getElementById("o").style.fontSize = "30px";
-            player = "x";
-        }*/
-/*
- if (player = "o"){       
-function getMousePosition2(canvas, event) {
-    let rect = canvas.getBoundingClientRect();
-    let x = event.clientX - rect.left;
-    let y = event.clientY - rect.top;
-
-        //Printing O in the first square
-        if (x < 200 && y < 200) {
-            ctx.clearRect(0, 0, 199, 199);
-            ctx.beginPath();
-            ctx.arc(110, 110, 80, 2 * Math.PI, false);
-            ctx.fillStyle = "blue";
-            ctx.fill();
-            ctx.beginPath();
-            ctx.arc(110, 110, 70, 2 * Math.PI, false);
-            ctx.fillStyle = "white";
-            ctx.fill();
-            
-            document.getElementById("x").style.fontSize = "50px";
-            document.getElementById("o").style.fontSize = "30px";
-            player = "x";
-            
-        }
-
-        //Printing O in the second square
-        if (x > 200 && x < 400 &&  y < 200) {
-            ctx.clearRect(203, 0, 196, 199);
-            ctx.beginPath();
-            ctx.arc(300, 110, 80, 2 * Math.PI, false);
-            ctx.fillStyle = "blue";
-            ctx.fill();
-            ctx.beginPath();
-            ctx.arc(300, 110, 70, 2 * Math.PI, false);
-            ctx.fillStyle = "white";
-            ctx.fill();
-
-            document.getElementById("x").style.fontSize = "50px";
-            document.getElementById("o").style.fontSize = "30px";
-            player = "x";
-        }
-
-            
-    }
-
-        
+document.getElementById("clearBtn").addEventListener("click", clearGame);
 
 
-let canvasElem2 = document.querySelector("canvas");
+function clearGame() {
+    ctx.strokeStyle = "black";
+    ctx.clearRect(0, 0, 600, 600);
+    //Vertical lines
+    ctx.strokeRect(200, 25, 2, 550);
+    ctx.strokeRect(400, 25, 2, 550);
 
-canvas.addEventListener("click", function (e) {
+    //Horizontal lines
+    ctx.strokeRect(25, 200, 550, 2);
+    ctx.strokeRect(25, 400, 550, 2);
 
-    getMousePosition2(canvasElem2, e);
-}); }*/
+    sqOne = null;
+    sqTwo = null;
+    sqThree = null;
+    sqFour = null;
+    sqFive = null;
+    sqSix = null;
+    sqSeven = null;
+    sqEight = null;
+    sqNine = null;
+    
+    player = "x";
+    document.getElementById("playerX").style.fontSize = "50px";
+    document.getElementById("playerO").style.fontSize = "30px";
+}
+
+
+function addPoints() {
+    console.log("Points!")
+    
+}
