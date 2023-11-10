@@ -43,8 +43,8 @@ function getMousePosition(canvas, event) {
             ctx.lineWidth = 5;
             ctx.stroke();
 
-            document.getElementById("o").style.fontSize = "50px";
-            document.getElementById("x").style.fontSize = "30px";
+            document.getElementById("playerO").style.fontSize = "50px";
+            document.getElementById("playerX").style.fontSize = "30px";
             player = "o";
             return
         }
@@ -61,8 +61,8 @@ function getMousePosition(canvas, event) {
             ctx.fillStyle = "white";
             ctx.fill();
 
-            document.getElementById("x").style.fontSize = "50px";
-            document.getElementById("o").style.fontSize = "30px";
+            document.getElementById("playerX").style.fontSize = "50px";
+            document.getElementById("playerO").style.fontSize = "30px";
             player = "x";
 
         }
@@ -85,8 +85,8 @@ function getMousePosition(canvas, event) {
             ctx.lineWidth = 5;
             ctx.stroke();
 
-            document.getElementById("o").style.fontSize = "50px";
-            document.getElementById("x").style.fontSize = "30px";
+            document.getElementById("playerO").style.fontSize = "50px";
+            document.getElementById("playerX").style.fontSize = "30px";
             player = "o";
             return
         }
@@ -104,8 +104,8 @@ function getMousePosition(canvas, event) {
             ctx.fillStyle = "white";
             ctx.fill();
 
-            document.getElementById("x").style.fontSize = "50px";
-            document.getElementById("o").style.fontSize = "30px";
+            document.getElementById("playerX").style.fontSize = "50px";
+            document.getElementById("playerO").style.fontSize = "30px";
             player = "x";
         }
     }
@@ -125,8 +125,8 @@ function getMousePosition(canvas, event) {
             ctx.lineWidth = 5;
             ctx.stroke();
 
-            document.getElementById("o").style.fontSize = "50px";
-            document.getElementById("x").style.fontSize = "30px";
+            document.getElementById("playerO").style.fontSize = "50px";
+            document.getElementById("playerX").style.fontSize = "30px";
             player = "o";
             return
         }
@@ -144,8 +144,8 @@ function getMousePosition(canvas, event) {
             ctx.fillStyle = "white";
             ctx.fill();
 
-            document.getElementById("x").style.fontSize = "50px";
-            document.getElementById("o").style.fontSize = "30px";
+            document.getElementById("playerX").style.fontSize = "50px";
+            document.getElementById("playerO").style.fontSize = "30px";
             player = "x";
         }
     }
@@ -167,8 +167,8 @@ function getMousePosition(canvas, event) {
             ctx.lineWidth = 5;
             ctx.stroke();
 
-            document.getElementById("o").style.fontSize = "50px";
-            document.getElementById("x").style.fontSize = "30px";
+            document.getElementById("playerO").style.fontSize = "50px";
+            document.getElementById("playerX").style.fontSize = "30px";
             player = "o";
             return
         }
@@ -186,8 +186,8 @@ function getMousePosition(canvas, event) {
             ctx.fillStyle = "white";
             ctx.fill();
 
-            document.getElementById("x").style.fontSize = "50px";
-            document.getElementById("o").style.fontSize = "30px";
+            document.getElementById("playerX").style.fontSize = "50px";
+            document.getElementById("playerO").style.fontSize = "30px";
             player = "x";
 
         }
@@ -211,8 +211,8 @@ function getMousePosition(canvas, event) {
             ctx.lineWidth = 5;
             ctx.stroke();
 
-            document.getElementById("o").style.fontSize = "50px";
-            document.getElementById("x").style.fontSize = "30px";
+            document.getElementById("playerO").style.fontSize = "50px";
+            document.getElementById("playerX").style.fontSize = "30px";
             player = "o";
             return
         }
@@ -230,8 +230,8 @@ function getMousePosition(canvas, event) {
             ctx.fillStyle = "white";
             ctx.fill();
 
-            document.getElementById("x").style.fontSize = "50px";
-            document.getElementById("o").style.fontSize = "30px";
+            document.getElementById("playerX").style.fontSize = "50px";
+            document.getElementById("playerO").style.fontSize = "30px";
             player = "x";
 
         }
@@ -254,8 +254,8 @@ function getMousePosition(canvas, event) {
             ctx.lineWidth = 5;
             ctx.stroke();
 
-            document.getElementById("o").style.fontSize = "50px";
-            document.getElementById("x").style.fontSize = "30px";
+            document.getElementById("playerO").style.fontSize = "50px";
+            document.getElementById("playerX").style.fontSize = "30px";
             player = "o";
             return
         }
@@ -273,8 +273,8 @@ function getMousePosition(canvas, event) {
             ctx.fillStyle = "white";
             ctx.fill();
 
-            document.getElementById("x").style.fontSize = "50px";
-            document.getElementById("o").style.fontSize = "30px";
+            document.getElementById("playerX").style.fontSize = "50px";
+            document.getElementById("playerO").style.fontSize = "30px";
             player = "x";
 
         }
@@ -296,8 +296,8 @@ function getMousePosition(canvas, event) {
             ctx.lineWidth = 5;
             ctx.stroke();
 
-            document.getElementById("o").style.fontSize = "50px";
-            document.getElementById("x").style.fontSize = "30px";
+            document.getElementById("playerO").style.fontSize = "50px";
+            document.getElementById("playerX").style.fontSize = "30px";
             player = "o";
             return
         }
@@ -315,8 +315,8 @@ function getMousePosition(canvas, event) {
             ctx.fillStyle = "white";
             ctx.fill();
 
-            document.getElementById("x").style.fontSize = "50px";
-            document.getElementById("o").style.fontSize = "30px";
+            document.getElementById("playerX").style.fontSize = "50px";
+            document.getElementById("playerO").style.fontSize = "30px";
             player = "x";
 
         }
@@ -338,8 +338,8 @@ function getMousePosition(canvas, event) {
             ctx.lineWidth = 5;
             ctx.stroke();
 
-            document.getElementById("o").style.fontSize = "50px";
-            document.getElementById("x").style.fontSize = "30px";
+            document.getElementById("playerO").style.fontSize = "50px";
+            document.getElementById("playerX").style.fontSize = "30px";
             player = "o";
             return
         }
@@ -357,8 +357,8 @@ function getMousePosition(canvas, event) {
             ctx.fillStyle = "white";
             ctx.fill();
 
-            document.getElementById("x").style.fontSize = "50px";
-            document.getElementById("o").style.fontSize = "30px";
+            document.getElementById("playerX").style.fontSize = "50px";
+            document.getElementById("playerO").style.fontSize = "30px";
             player = "x";
 
         }
@@ -380,8 +380,8 @@ function getMousePosition(canvas, event) {
             ctx.lineWidth = 5;
             ctx.stroke();
 
-            document.getElementById("o").style.fontSize = "50px";
-            document.getElementById("x").style.fontSize = "30px";
+            document.getElementById("playerO").style.fontSize = "50px";
+            document.getElementById("playerX").style.fontSize = "30px";
             player = "o";
             return
         }
@@ -399,8 +399,8 @@ function getMousePosition(canvas, event) {
             ctx.fillStyle = "white";
             ctx.fill();
 
-            document.getElementById("x").style.fontSize = "50px";
-            document.getElementById("o").style.fontSize = "30px";
+            document.getElementById("playerX").style.fontSize = "50px";
+            document.getElementById("playerO").style.fontSize = "30px";
             player = "x";
 
         }
