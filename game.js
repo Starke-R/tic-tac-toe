@@ -40,6 +40,8 @@ let sqSix = null;
 let sqSeven = null;
 let sqEight = null;
 let sqNine = null;
+let pointsToRed = null;
+let pointsToBlue = null;
 
 function getMousePosition(canvas, event) {
     let rect = canvas.getBoundingClientRect();
@@ -49,6 +51,7 @@ function getMousePosition(canvas, event) {
     //Check if Player X has three in a row
     if (sqOne == "red" && sqTwo == "red" && sqThree == "red") {
         alert("Player X has won!")
+        pointsToRed = "red";
         document.getElementById("pointBtn").addEventListener("click", addPointsRed);
         return
     }
@@ -56,42 +59,49 @@ function getMousePosition(canvas, event) {
     if (sqFour == "red" && sqFive == "red" && sqSix == "red") {
         alert("Player X has won!")
         document.getElementById("pointBtn").addEventListener("click", addPointsRed);
+        pointsToRed = "red";
         return
     }
 
     if (sqSeven == "red" && sqEight == "red" && sqNine == "red") {
         alert("Player X has won!")
         document.getElementById("pointBtn").addEventListener("click", addPointsRed);
+        pointsToRed = "red";
         return
     }
 
     if (sqOne == "red" && sqFour == "red" && sqSeven == "red") {
         alert("Player X has won!")
         document.getElementById("pointBtn").addEventListener("click", addPointsRed);
+        pointsToRed = "red";
         return
     }
 
     if (sqTwo == "red" && sqFive == "red" && sqEight == "red") {
         alert("Player X has won!")
         document.getElementById("pointBtn").addEventListener("click", addPointsRed);
+        pointsToRed = "red";
         return
     }
 
     if (sqThree == "red" && sqSix == "red" && sqNine == "red") {
         alert("Player X has won!")
         document.getElementById("pointBtn").addEventListener("click", addPointsRed);
+        pointsToRed = "red";
         return
     }
 
     if (sqOne == "red" && sqFive == "red" && sqNine == "red") {
         alert("Player X has won!")
         document.getElementById("pointBtn").addEventListener("click", addPointsRed);
+        pointsToRed = "red";
         return
     }
 
     if (sqThree == "red" && sqFive == "red" && sqSeven == "red") {
         alert("Player X has won!")
         document.getElementById("pointBtn").addEventListener("click", addPointsRed);
+        pointsToRed = "red";
         return
     }
 
@@ -99,47 +109,55 @@ function getMousePosition(canvas, event) {
     if (sqOne == "blue" && sqTwo == "blue" && sqThree == "blue") {
         alert("Player O has won!")
         document.getElementById("pointBtn").addEventListener("click", addPointsBlue);
+        pointsToBlue = "blue";
         return
     }
 
     if (sqFour == "blue" && sqFive == "blue" && sqSix == "blue") {
         alert("Player O has won!")
         document.getElementById("pointBtn").addEventListener("click", addPointsBlue);
+        pointsToBlue = "blue";
         return
     }
 
     if (sqSeven == "blue" && sqEight == "blue" && sqNine == "blue") {
         alert("Player O has won!")
         document.getElementById("pointBtn").addEventListener("click", addPointsBlue);
+        pointsToBlue = "blue";
         return
     }
 
     if (sqOne == "blue" && sqFour == "blue" && sqSeven == "blue") {
         alert("Player O has won!")
         document.getElementById("pointBtn").addEventListener("click", addPointsBlue);
+        pointsToBlue = "blue";
         return
     }
 
     if (sqTwo == "blue" && sqFive == "blue" && sqEight == "blue") {
         alert("Player O has won!")
         document.getElementById("pointBtn").addEventListener("click", addPointsBlue);
+        pointsToBlue = "blue";
         return
     }
 
     if (sqThree == "blue" && sqSix == "blue" && sqNine == "blue") {
         alert("Player O has won!")
         document.getElementById("pointBtn").addEventListener("click", addPointsBlue);
+        pointsToBlue = "blue";
         return
     }
     if (sqOne == "blue" && sqFive == "blue" && sqNine == "blue") {
         alert("Player O has won!")
         document.getElementById("pointBtn").addEventListener("click", addPointsBlue);
+        pointsToBlue = "blue";
         return
     }
 
     if (sqThree == "blue" && sqFive == "blue" && sqSeven == "blue") {
         alert("Player O has won!")
         document.getElementById("pointBtn").addEventListener("click", addPointsBlue);
+        pointsToBlue = "blue";
         return
     }
 
@@ -590,12 +608,18 @@ function clearGame() {
 
 function addPointsRed() {
     let addPointsX = document.getElementById("pointsX")
+    if (pointsToRed == "red") {
     addPointsX.innerText = "Player X points: " + pointsX++;
+    pointsToRed = null;
+    }
 
 }
 
 function addPointsBlue() {
     let addPointsO = document.getElementById("pointsO")
+    if (pointsToBlue == "blue") {
     addPointsO.innerText = "Player O points: " + pointsO++;
+    pointsToBlue = null;
+    }
 
 }
