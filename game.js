@@ -7,13 +7,9 @@ let player = "x";
 let pointsX = 1;
 let pointsO = 1;
 
-document.getElementById("playerX").style.color = "red";
-document.getElementById("playerO").style.color = "blue";
 document.getElementById("playerX").style.fontSize = "50px";
 document.getElementById("playerO").style.fontSize = "30px";
 
-document.getElementById("pointsX").style.color = "red";
-document.getElementById("pointsO").style.color = "blue";
 document.getElementById("pointsX").style.fontSize = "30px";
 document.getElementById("pointsO").style.fontSize = "30px";
 
@@ -22,7 +18,9 @@ canvas.width = 600;
 canvas.height = 600;
 
 //Vertical lines
-ctx.strokeStyle = "black";
+ctx.strokeStyle = "purple";
+ctx.shadowBlur = 10;
+ctx.shadowColor = "white";
 ctx.lineWidth = 5;
 ctx.strokeRect(200, 25, 2, 550);
 ctx.strokeRect(400, 25, 2, 550);
@@ -50,56 +48,56 @@ function getMousePosition(canvas, event) {
 
     //Check if Player X has three in a row
     if (sqOne == "red" && sqTwo == "red" && sqThree == "red") {
-        alert("Player X has won!")
+        alert("Player X has already won! Add the points to the scores!")
         pointsToRed = "red";
         document.getElementById("pointBtn").addEventListener("click", addPointsRed);
         return
     }
 
     if (sqFour == "red" && sqFive == "red" && sqSix == "red") {
-        alert("Player X has won!")
+        alert("Player X has already won! Add the points to the scores!")
         document.getElementById("pointBtn").addEventListener("click", addPointsRed);
         pointsToRed = "red";
         return
     }
 
     if (sqSeven == "red" && sqEight == "red" && sqNine == "red") {
-        alert("Player X has won!")
+        alert("Player X has already won! Add the points to the scores!")
         document.getElementById("pointBtn").addEventListener("click", addPointsRed);
         pointsToRed = "red";
         return
     }
 
     if (sqOne == "red" && sqFour == "red" && sqSeven == "red") {
-        alert("Player X has won!")
+        alert("Player X has already won! Add the points to the scores!")
         document.getElementById("pointBtn").addEventListener("click", addPointsRed);
         pointsToRed = "red";
         return
     }
 
     if (sqTwo == "red" && sqFive == "red" && sqEight == "red") {
-        alert("Player X has won!")
+        alert("Player X has already won! Add the points to the scores!")
         document.getElementById("pointBtn").addEventListener("click", addPointsRed);
         pointsToRed = "red";
         return
     }
 
     if (sqThree == "red" && sqSix == "red" && sqNine == "red") {
-        alert("Player X has won!")
+        alert("Player X has already won! Add the points to the scores!")
         document.getElementById("pointBtn").addEventListener("click", addPointsRed);
         pointsToRed = "red";
         return
     }
 
     if (sqOne == "red" && sqFive == "red" && sqNine == "red") {
-        alert("Player X has won!")
+        alert("Player X has already won! Add the points to the scores!")
         document.getElementById("pointBtn").addEventListener("click", addPointsRed);
         pointsToRed = "red";
         return
     }
 
     if (sqThree == "red" && sqFive == "red" && sqSeven == "red") {
-        alert("Player X has won!")
+        alert("Player X has already won! Add the points to the scores!")
         document.getElementById("pointBtn").addEventListener("click", addPointsRed);
         pointsToRed = "red";
         return
@@ -107,55 +105,55 @@ function getMousePosition(canvas, event) {
 
     //Check if Player O has three in a row
     if (sqOne == "blue" && sqTwo == "blue" && sqThree == "blue") {
-        alert("Player O has won!")
+        alert("Player O has already won! Add the points to the scores!")
         document.getElementById("pointBtn").addEventListener("click", addPointsBlue);
         pointsToBlue = "blue";
         return
     }
 
     if (sqFour == "blue" && sqFive == "blue" && sqSix == "blue") {
-        alert("Player O has won!")
+        alert("Player O has already won! Add the points to the scores!")
         document.getElementById("pointBtn").addEventListener("click", addPointsBlue);
         pointsToBlue = "blue";
         return
     }
 
     if (sqSeven == "blue" && sqEight == "blue" && sqNine == "blue") {
-        alert("Player O has won!")
+        alert("Player O has already won! Add the points to the scores!")
         document.getElementById("pointBtn").addEventListener("click", addPointsBlue);
         pointsToBlue = "blue";
         return
     }
 
     if (sqOne == "blue" && sqFour == "blue" && sqSeven == "blue") {
-        alert("Player O has won!")
+        alert("Player O has already won! Add the points to the scores!")
         document.getElementById("pointBtn").addEventListener("click", addPointsBlue);
         pointsToBlue = "blue";
         return
     }
 
     if (sqTwo == "blue" && sqFive == "blue" && sqEight == "blue") {
-        alert("Player O has won!")
+        alert("Player O has already won! Add the points to the scores!")
         document.getElementById("pointBtn").addEventListener("click", addPointsBlue);
         pointsToBlue = "blue";
         return
     }
 
     if (sqThree == "blue" && sqSix == "blue" && sqNine == "blue") {
-        alert("Player O has won!")
+        alert("Player O has already won! Add the points to the scores!")
         document.getElementById("pointBtn").addEventListener("click", addPointsBlue);
         pointsToBlue = "blue";
         return
     }
     if (sqOne == "blue" && sqFive == "blue" && sqNine == "blue") {
-        alert("Player O has won!")
+        alert("Player O has already won! Add the points to the scores!")
         document.getElementById("pointBtn").addEventListener("click", addPointsBlue);
         pointsToBlue = "blue";
         return
     }
 
     if (sqThree == "blue" && sqFive == "blue" && sqSeven == "blue") {
-        alert("Player O has won!")
+        alert("Player O has already won! Add the points to the scores!")
         document.getElementById("pointBtn").addEventListener("click", addPointsBlue);
         pointsToBlue = "blue";
         return
@@ -194,7 +192,7 @@ function getMousePosition(canvas, event) {
             ctx.fill();
             ctx.beginPath();
             ctx.arc(110, 110, 70, 2 * Math.PI, false);
-            ctx.fillStyle = "white";
+            ctx.fillStyle = "black";
             ctx.fill();
 
             document.getElementById("playerX").style.fontSize = "50px";
@@ -239,7 +237,7 @@ function getMousePosition(canvas, event) {
             ctx.fill();
             ctx.beginPath();
             ctx.arc(300, 110, 70, 2 * Math.PI, false);
-            ctx.fillStyle = "white";
+            ctx.fillStyle = "black";
             ctx.fill();
 
             document.getElementById("playerX").style.fontSize = "50px";
@@ -282,7 +280,7 @@ function getMousePosition(canvas, event) {
             ctx.fill();
             ctx.beginPath();
             ctx.arc(500, 110, 70, 2 * Math.PI, false);
-            ctx.fillStyle = "white";
+            ctx.fillStyle = "black";
             ctx.fill();
 
             document.getElementById("playerX").style.fontSize = "50px";
@@ -327,7 +325,7 @@ function getMousePosition(canvas, event) {
             ctx.fill();
             ctx.beginPath();
             ctx.arc(110, 300, 70, 2 * Math.PI, false);
-            ctx.fillStyle = "white";
+            ctx.fillStyle = "black";
             ctx.fill();
 
             document.getElementById("playerX").style.fontSize = "50px";
@@ -373,7 +371,7 @@ function getMousePosition(canvas, event) {
             ctx.fill();
             ctx.beginPath();
             ctx.arc(300, 300, 70, 2 * Math.PI, false);
-            ctx.fillStyle = "white";
+            ctx.fillStyle = "black";
             ctx.fill();
 
             document.getElementById("playerX").style.fontSize = "50px";
@@ -418,7 +416,7 @@ function getMousePosition(canvas, event) {
             ctx.fill();
             ctx.beginPath();
             ctx.arc(500, 300, 70, 2 * Math.PI, false);
-            ctx.fillStyle = "white";
+            ctx.fillStyle = "black";
             ctx.fill();
 
             document.getElementById("playerX").style.fontSize = "50px";
@@ -462,7 +460,7 @@ function getMousePosition(canvas, event) {
             ctx.fill();
             ctx.beginPath();
             ctx.arc(110, 490, 70, 2 * Math.PI, false);
-            ctx.fillStyle = "white";
+            ctx.fillStyle = "black";
             ctx.fill();
 
             document.getElementById("playerX").style.fontSize = "50px";
@@ -506,7 +504,7 @@ function getMousePosition(canvas, event) {
             ctx.fill();
             ctx.beginPath();
             ctx.arc(300, 490, 70, 2 * Math.PI, false);
-            ctx.fillStyle = "white";
+            ctx.fillStyle = "black";
             ctx.fill();
 
             document.getElementById("playerX").style.fontSize = "50px";
@@ -550,7 +548,7 @@ function getMousePosition(canvas, event) {
             ctx.fill();
             ctx.beginPath();
             ctx.arc(500, 490, 70, 2 * Math.PI, false);
-            ctx.fillStyle = "white";
+            ctx.fillStyle = "black";
             ctx.fill();
 
             document.getElementById("playerX").style.fontSize = "50px";
@@ -579,7 +577,7 @@ document.getElementById("clearBtn").addEventListener("click", clearGame);
 
 
 function clearGame() {
-    ctx.strokeStyle = "black";
+    ctx.strokeStyle = "purple";
     ctx.clearRect(0, 0, 600, 600);
     
     //Vertical lines
