@@ -18,17 +18,10 @@ body {
     background-color: purple;
     border: none;
     height: 50px;
-    width: 100px;
+    width: 200px;
     color: white;
 }
 
-#clearBtn{
-    background-color: purple;
-    border: none;
-    height: 50px;
-    width: 100px;
-    color: white;
-}
 
 #playerX {
     color: rgb(180, 0, 0);
