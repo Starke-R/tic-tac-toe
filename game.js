@@ -49,735 +49,790 @@ function getMousePosition(canvas, event) {
     let y = event.clientY - rect.top;
 
     if (player == "x") {
-        //Printing X in the first square
-        if (x < 200 && y < 200) {
-            ctx.strokeStyle = "red";
-            ctx.beginPath();
-            ctx.moveTo(30, 30);
-            ctx.lineTo(180, 180);
-            ctx.lineWidth = 5;
-            ctx.stroke();
-            ctx.beginPath();
-            ctx.moveTo(180, 30);
-            ctx.lineTo(30, 180);
-            ctx.lineWidth = 5;
-            ctx.stroke();
 
-            //Checking if the other two squares are marked and player wins
-            if (sqTwo == "red" && sqThree == "red") {
-                alert("Player X has won! Add the points to the scores!")
-                pointsToRed = "red";
-                document.getElementById("pointBtn").addEventListener("click", addPointsRed);
+        if (sqOne == null) {
+
+            //Printing X in the first square
+            if (x < 200 && y < 200) {
+                ctx.strokeStyle = "red";
+                ctx.beginPath();
+                ctx.moveTo(30, 30);
+                ctx.lineTo(180, 180);
+                ctx.lineWidth = 5;
+                ctx.stroke();
+                ctx.beginPath();
+                ctx.moveTo(180, 30);
+                ctx.lineTo(30, 180);
+                ctx.lineWidth = 5;
+                ctx.stroke();
+
+                //Checking if the other two squares are marked and player wins
+                if (sqTwo == "red" && sqThree == "red") {
+                    alert("Player X has won! Add the points to the scores!")
+                    pointsToRed = "red";
+                    document.getElementById("pointBtn").addEventListener("click", addPointsRed);
+                    return
+                }
+
+                if (sqFour == "red" && sqSeven == "red") {
+                    alert("Player X has won! Add the points to the scores!")
+                    document.getElementById("pointBtn").addEventListener("click", addPointsRed);
+                    pointsToRed = "red";
+                    return
+                }
+                if (sqFive == "red" && sqNine == "red") {
+                    alert("Player X has won! Add the points to the scores!")
+                    document.getElementById("pointBtn").addEventListener("click", addPointsRed);
+                    pointsToRed = "red";
+                    return
+                }
+
+                document.getElementById("playerO").style.fontSize = "50px";
+                document.getElementById("playerX").style.fontSize = "30px";
+                sqOne = "red";
+                player = "o";
                 return
             }
-
-            if (sqFour == "red" && sqSeven == "red") {
-                alert("Player X has won! Add the points to the scores!")
-                document.getElementById("pointBtn").addEventListener("click", addPointsRed);
-                pointsToRed = "red";
-                return
-            }
-            if (sqFive == "red" && sqNine == "red") {
-                alert("Player X has won! Add the points to the scores!")
-                document.getElementById("pointBtn").addEventListener("click", addPointsRed);
-                pointsToRed = "red";
-                return
-            }
-
-            document.getElementById("playerO").style.fontSize = "50px";
-            document.getElementById("playerX").style.fontSize = "30px";
-            sqOne = "red";
-            player = "o";
-            return
         }
     }
 
     if (player == "o") {
 
-        //Printing O in the first square
-        if (x < 200 && y < 200) {
-            ctx.beginPath();
-            ctx.arc(110, 110, 80, 2 * Math.PI, false);
-            ctx.fillStyle = "blue";
-            ctx.fill();
-            ctx.beginPath();
-            ctx.arc(110, 110, 70, 2 * Math.PI, false);
-            ctx.fillStyle = "black";
-            ctx.fill();
+        if (sqOne == null) {
 
-            //Checking if the other two squares are marked and player wins
-            if (sqTwo == "blue" && sqThree == "blue") {
-                alert("Player O has won! Add the points to the scores!")
-                document.getElementById("pointBtn").addEventListener("click", addPointsBlue);
-                pointsToBlue = "blue";
+            //Printing O in the first square
+            if (x < 200 && y < 200) {
+                ctx.beginPath();
+                ctx.arc(110, 110, 80, 2 * Math.PI, false);
+                ctx.fillStyle = "blue";
+                ctx.fill();
+                ctx.beginPath();
+                ctx.arc(110, 110, 70, 2 * Math.PI, false);
+                ctx.fillStyle = "black";
+                ctx.fill();
+
+                //Checking if the other two squares are marked and player wins
+                if (sqTwo == "blue" && sqThree == "blue") {
+                    alert("Player O has won! Add the points to the scores!")
+                    document.getElementById("pointBtn").addEventListener("click", addPointsBlue);
+                    pointsToBlue = "blue";
+                    return
+                }
+
+                if (sqFour == "blue" && sqSeven == "blue") {
+                    alert("Player O has won! Add the points to the scores!")
+                    document.getElementById("pointBtn").addEventListener("click", addPointsBlue);
+                    pointsToBlue = "blue";
+                    return
+                }
+                if (sqFive == "blue" && sqNine == "blue") {
+                    alert("Player O has won! Add the points to the scores!")
+                    document.getElementById("pointBtn").addEventListener("click", addPointsBlue);
+                    pointsToBlue = "blue";
+                    return
+                }
+
+                document.getElementById("playerX").style.fontSize = "50px";
+                document.getElementById("playerO").style.fontSize = "30px";
+                player = "x";
+                sqOne = "blue";
                 return
             }
-
-            if (sqFour == "blue" && sqSeven == "blue") {
-                alert("Player O has won! Add the points to the scores!")
-                document.getElementById("pointBtn").addEventListener("click", addPointsBlue);
-                pointsToBlue = "blue";
-                return
-            }
-            if (sqFive == "blue" && sqNine == "blue") {
-                alert("Player O has won! Add the points to the scores!")
-                document.getElementById("pointBtn").addEventListener("click", addPointsBlue);
-                pointsToBlue = "blue";
-                return
-            }
-
-            document.getElementById("playerX").style.fontSize = "50px";
-            document.getElementById("playerO").style.fontSize = "30px";
-            player = "x";
-            sqOne = "blue";
-            return
         }
     }
 
     if (player == "x") {
 
-        //Printing X in the second square
-        if (x > 200 && x < 400 && y < 200) {
-            ctx.strokeStyle = "red";
-            ctx.beginPath();
-            ctx.moveTo(230, 30);
-            ctx.lineTo(380, 180);
-            ctx.lineWidth = 5;
-            ctx.stroke();
-            ctx.beginPath();
-            ctx.moveTo(380, 30);
-            ctx.lineTo(220, 180);
-            ctx.lineWidth = 5;
-            ctx.stroke();
+        if (sqTwo == null) {
 
-            //Checking if the other two squares are marked and player wins
-            if (sqOne == "red" && sqThree == "red") {
-                alert("Player X has won! Add the points to the scores!")
-                pointsToRed = "red";
-                document.getElementById("pointBtn").addEventListener("click", addPointsRed);
+            //Printing X in the second square
+            if (x > 200 && x < 400 && y < 200) {
+                ctx.strokeStyle = "red";
+                ctx.beginPath();
+                ctx.moveTo(230, 30);
+                ctx.lineTo(380, 180);
+                ctx.lineWidth = 5;
+                ctx.stroke();
+                ctx.beginPath();
+                ctx.moveTo(380, 30);
+                ctx.lineTo(220, 180);
+                ctx.lineWidth = 5;
+                ctx.stroke();
+
+                //Checking if the other two squares are marked and player wins
+                if (sqOne == "red" && sqThree == "red") {
+                    alert("Player X has won! Add the points to the scores!")
+                    pointsToRed = "red";
+                    document.getElementById("pointBtn").addEventListener("click", addPointsRed);
+                    return
+                }
+                if (sqFive == "red" && sqEight == "red") {
+                    alert("Player X has won! Add the points to the scores!")
+                    document.getElementById("pointBtn").addEventListener("click", addPointsRed);
+                    pointsToRed = "red";
+                    return
+                }
+
+                document.getElementById("playerO").style.fontSize = "50px";
+                document.getElementById("playerX").style.fontSize = "30px";
+                sqTwo = "red";
+                player = "o";
                 return
             }
-            if (sqFive == "red" && sqEight == "red") {
-                alert("Player X has won! Add the points to the scores!")
-                document.getElementById("pointBtn").addEventListener("click", addPointsRed);
-                pointsToRed = "red";
-                return
-            }
-
-            document.getElementById("playerO").style.fontSize = "50px";
-            document.getElementById("playerX").style.fontSize = "30px";
-            sqTwo = "red";
-            player = "o";
-            return
         }
     }
 
     if (player == "o") {
 
-        //Printing O in the second square
-        if (x > 200 && x < 400 && y < 200) {
-            ctx.beginPath();
-            ctx.arc(300, 110, 80, 2 * Math.PI, false);
-            ctx.fillStyle = "blue";
-            ctx.fill();
-            ctx.beginPath();
-            ctx.arc(300, 110, 70, 2 * Math.PI, false);
-            ctx.fillStyle = "black";
-            ctx.fill();
+        if (sqTwo == null) {
 
-            //Checking if the other two squares are marked and player wins
-            if (sqOne == "blue" && sqThree == "blue") {
-                alert("Player O has won! Add the points to the scores!")
-                document.getElementById("pointBtn").addEventListener("click", addPointsBlue);
-                pointsToBlue = "blue";
+            //Printing O in the second square
+            if (x > 200 && x < 400 && y < 200) {
+                ctx.beginPath();
+                ctx.arc(300, 110, 80, 2 * Math.PI, false);
+                ctx.fillStyle = "blue";
+                ctx.fill();
+                ctx.beginPath();
+                ctx.arc(300, 110, 70, 2 * Math.PI, false);
+                ctx.fillStyle = "black";
+                ctx.fill();
+
+                //Checking if the other two squares are marked and player wins
+                if (sqOne == "blue" && sqThree == "blue") {
+                    alert("Player O has won! Add the points to the scores!")
+                    document.getElementById("pointBtn").addEventListener("click", addPointsBlue);
+                    pointsToBlue = "blue";
+                    return
+                }
+                if (sqFive == "blue" && sqEight == "blue") {
+                    alert("Player O has won! Add the points to the scores!")
+                    document.getElementById("pointBtn").addEventListener("click", addPointsBlue);
+                    pointsToBlue = "blue";
+                    return
+                }
+
+                document.getElementById("playerX").style.fontSize = "50px";
+                document.getElementById("playerO").style.fontSize = "30px";
+                sqTwo = "blue";
+                player = "x";
                 return
             }
-            if (sqFive == "blue" && sqEight == "blue") {
-                alert("Player O has won! Add the points to the scores!")
-                document.getElementById("pointBtn").addEventListener("click", addPointsBlue);
-                pointsToBlue = "blue";
-                return
-            }
-
-            document.getElementById("playerX").style.fontSize = "50px";
-            document.getElementById("playerO").style.fontSize = "30px";
-            sqTwo = "blue";
-            player = "x";
-            return
         }
     }
 
     if (player == "x") {
 
-        //Printing X in the third square
-        if (x > 400 && x < 600 && y < 200) {
-            ctx.strokeStyle = "red";
-            ctx.beginPath();
-            ctx.moveTo(420, 30);
-            ctx.lineTo(570, 180);
-            ctx.lineWidth = 5;
-            ctx.stroke();
-            ctx.beginPath();
-            ctx.moveTo(570, 30);
-            ctx.lineTo(420, 180);
-            ctx.lineWidth = 5;
-            ctx.stroke();
+        if (sqThree == null) {
 
-            //Checking if the other two squares are marked and player wins
-            if (sqOne == "red" && sqTwo == "red") {
-                alert("Player X has won! Add the points to the scores!")
-                pointsToRed = "red";
-                document.getElementById("pointBtn").addEventListener("click", addPointsRed);
-                return
-            }
-            if (sqSix == "red" && sqNine == "red") {
-                alert("Player X has won! Add the points to the scores!")
-                document.getElementById("pointBtn").addEventListener("click", addPointsRed);
-                pointsToRed = "red";
-                return
-            }
-            if (sqFive == "red" && sqSeven == "red") {
-                alert("Player X has won! Add the points to the scores!")
-                document.getElementById("pointBtn").addEventListener("click", addPointsRed);
-                pointsToRed = "red";
-                return
-            }
+            //Printing X in the third square
+            if (x > 400 && x < 600 && y < 200) {
+                ctx.strokeStyle = "red";
+                ctx.beginPath();
+                ctx.moveTo(420, 30);
+                ctx.lineTo(570, 180);
+                ctx.lineWidth = 5;
+                ctx.stroke();
+                ctx.beginPath();
+                ctx.moveTo(570, 30);
+                ctx.lineTo(420, 180);
+                ctx.lineWidth = 5;
+                ctx.stroke();
 
-            document.getElementById("playerO").style.fontSize = "50px";
-            document.getElementById("playerX").style.fontSize = "30px";
-            sqThree = "red"
-            player = "o";
-            return
+                //Checking if the other two squares are marked and player wins
+                if (sqOne == "red" && sqTwo == "red") {
+                    alert("Player X has won! Add the points to the scores!")
+                    pointsToRed = "red";
+                    document.getElementById("pointBtn").addEventListener("click", addPointsRed);
+                    return
+                }
+                if (sqSix == "red" && sqNine == "red") {
+                    alert("Player X has won! Add the points to the scores!")
+                    document.getElementById("pointBtn").addEventListener("click", addPointsRed);
+                    pointsToRed = "red";
+                    return
+                }
+                if (sqFive == "red" && sqSeven == "red") {
+                    alert("Player X has won! Add the points to the scores!")
+                    document.getElementById("pointBtn").addEventListener("click", addPointsRed);
+                    pointsToRed = "red";
+                    return
+                }
+
+                document.getElementById("playerO").style.fontSize = "50px";
+                document.getElementById("playerX").style.fontSize = "30px";
+                sqThree = "red"
+                player = "o";
+                return
+            }
         }
     }
 
     if (player == "o") {
 
-        //Printing O in the third square
-        if (x > 400 && x < 600 && y < 200) {
-            ctx.beginPath();
-            ctx.arc(500, 110, 80, 2 * Math.PI, false);
-            ctx.fillStyle = "blue";
-            ctx.fill();
-            ctx.beginPath();
-            ctx.arc(500, 110, 70, 2 * Math.PI, false);
-            ctx.fillStyle = "black";
-            ctx.fill();
+        if (sqThree == null) {
 
-            //Checking if the other two squares are marked and player wins
-            if (sqOne == "blue" && sqTwo == "blue") {
-                alert("Player O has won! Add the points to the scores!")
-                document.getElementById("pointBtn").addEventListener("click", addPointsBlue);
-                pointsToBlue = "blue";
-                return
-            }
-            if (sqSix == "blue" && sqNine == "blue") {
-                alert("Player O has won! Add the points to the scores!")
-                document.getElementById("pointBtn").addEventListener("click", addPointsBlue);
-                pointsToBlue = "blue";
-                return
-            }
-            if (sqFive == "blue" && sqSeven == "blue") {
-                alert("Player O has won! Add the points to the scores!")
-                document.getElementById("pointBtn").addEventListener("click", addPointsBlue);
-                pointsToBlue = "blue";
-                return
-            }
+            //Printing O in the third square
+            if (x > 400 && x < 600 && y < 200) {
+                ctx.beginPath();
+                ctx.arc(500, 110, 80, 2 * Math.PI, false);
+                ctx.fillStyle = "blue";
+                ctx.fill();
+                ctx.beginPath();
+                ctx.arc(500, 110, 70, 2 * Math.PI, false);
+                ctx.fillStyle = "black";
+                ctx.fill();
 
-            document.getElementById("playerX").style.fontSize = "50px";
-            document.getElementById("playerO").style.fontSize = "30px";
-            sqThree = "blue";
-            player = "x";
-            return
+                //Checking if the other two squares are marked and player wins
+                if (sqOne == "blue" && sqTwo == "blue") {
+                    alert("Player O has won! Add the points to the scores!")
+                    document.getElementById("pointBtn").addEventListener("click", addPointsBlue);
+                    pointsToBlue = "blue";
+                    return
+                }
+                if (sqSix == "blue" && sqNine == "blue") {
+                    alert("Player O has won! Add the points to the scores!")
+                    document.getElementById("pointBtn").addEventListener("click", addPointsBlue);
+                    pointsToBlue = "blue";
+                    return
+                }
+                if (sqFive == "blue" && sqSeven == "blue") {
+                    alert("Player O has won! Add the points to the scores!")
+                    document.getElementById("pointBtn").addEventListener("click", addPointsBlue);
+                    pointsToBlue = "blue";
+                    return
+                }
+
+                document.getElementById("playerX").style.fontSize = "50px";
+                document.getElementById("playerO").style.fontSize = "30px";
+                sqThree = "blue";
+                player = "x";
+                return
+            }
         }
     }
 
     if (player == "x") {
 
-        //Printing X in the fourth square
-        if (x < 200 && y > 200 && y < 400) {
-            ctx.strokeStyle = "red";
-            ctx.beginPath();
-            ctx.moveTo(30, 220);
-            ctx.lineTo(180, 380);
-            ctx.lineWidth = 5;
-            ctx.stroke();
-            ctx.beginPath();
-            ctx.moveTo(180, 220);
-            ctx.lineTo(30, 380);
-            ctx.lineWidth = 5;
-            ctx.stroke();
+        if (sqFour == null) {
 
-            //Checking if the other two squares are marked and player wins
-            if (sqFive == "red" && sqSix == "red") {
-                alert("Player X has won! Add the points to the scores!")
-                document.getElementById("pointBtn").addEventListener("click", addPointsRed);
-                pointsToRed = "red";
+            //Printing X in the fourth square
+            if (x < 200 && y > 200 && y < 400) {
+                ctx.strokeStyle = "red";
+                ctx.beginPath();
+                ctx.moveTo(30, 220);
+                ctx.lineTo(180, 380);
+                ctx.lineWidth = 5;
+                ctx.stroke();
+                ctx.beginPath();
+                ctx.moveTo(180, 220);
+                ctx.lineTo(30, 380);
+                ctx.lineWidth = 5;
+                ctx.stroke();
+
+                //Checking if the other two squares are marked and player wins
+                if (sqFive == "red" && sqSix == "red") {
+                    alert("Player X has won! Add the points to the scores!")
+                    document.getElementById("pointBtn").addEventListener("click", addPointsRed);
+                    pointsToRed = "red";
+                    return
+                }
+
+                if (sqOne == "red" && sqSeven == "red") {
+                    alert("Player X has won! Add the points to the scores!")
+                    document.getElementById("pointBtn").addEventListener("click", addPointsRed);
+                    pointsToRed = "red";
+                    return
+                }
+
+                document.getElementById("playerO").style.fontSize = "50px";
+                document.getElementById("playerX").style.fontSize = "30px";
+                sqFour = "red";
+                player = "o";
                 return
             }
-
-            if (sqOne == "red" && sqSeven == "red") {
-                alert("Player X has won! Add the points to the scores!")
-                document.getElementById("pointBtn").addEventListener("click", addPointsRed);
-                pointsToRed = "red";
-                return
-            }
-
-            document.getElementById("playerO").style.fontSize = "50px";
-            document.getElementById("playerX").style.fontSize = "30px";
-            sqFour = "red";
-            player = "o";
-            return
         }
     }
 
     if (player == "o") {
 
-        //Printing O in the fourth square
-        if (x < 200 && y > 200 && y < 400) {
-            ctx.beginPath();
-            ctx.arc(110, 300, 80, 2 * Math.PI, false);
-            ctx.fillStyle = "blue";
-            ctx.fill();
-            ctx.beginPath();
-            ctx.arc(110, 300, 70, 2 * Math.PI, false);
-            ctx.fillStyle = "black";
-            ctx.fill();
+        if (sqFour == null) {
 
-            //Checking if the other two squares are marked and player wins
-            if (sqFive == "blue" && sqSix == "blue") {
-                alert("Player O has won! Add the points to the scores!")
-                document.getElementById("pointBtn").addEventListener("click", addPointsBlue);
-                pointsToBlue = "blue";
+            //Printing O in the fourth square
+            if (x < 200 && y > 200 && y < 400) {
+                ctx.beginPath();
+                ctx.arc(110, 300, 80, 2 * Math.PI, false);
+                ctx.fillStyle = "blue";
+                ctx.fill();
+                ctx.beginPath();
+                ctx.arc(110, 300, 70, 2 * Math.PI, false);
+                ctx.fillStyle = "black";
+                ctx.fill();
+
+                //Checking if the other two squares are marked and player wins
+                if (sqFive == "blue" && sqSix == "blue") {
+                    alert("Player O has won! Add the points to the scores!")
+                    document.getElementById("pointBtn").addEventListener("click", addPointsBlue);
+                    pointsToBlue = "blue";
+                    return
+                }
+
+                if (sqOne == "blue" && sqSeven == "blue") {
+                    alert("Player O has won! Add the points to the scores!")
+                    document.getElementById("pointBtn").addEventListener("click", addPointsBlue);
+                    pointsToBlue = "blue";
+                    return
+                }
+
+                document.getElementById("playerX").style.fontSize = "50px";
+                document.getElementById("playerO").style.fontSize = "30px";
+                sqFour = "blue";
+                player = "x";
                 return
             }
-
-            if (sqOne == "blue" && sqSeven == "blue") {
-                alert("Player O has won! Add the points to the scores!")
-                document.getElementById("pointBtn").addEventListener("click", addPointsBlue);
-                pointsToBlue = "blue";
-                return
-            }
-
-            document.getElementById("playerX").style.fontSize = "50px";
-            document.getElementById("playerO").style.fontSize = "30px";
-            sqFour = "blue";
-            player = "x";
-            return
         }
     }
 
     if (player == "x") {
 
-        //Printing X in the fifth square
-        if (x > 200 && x < 400 && y > 200 && y < 400) {
-            ctx.strokeStyle = "red";
-            ctx.beginPath();
-            ctx.moveTo(230, 220);
-            ctx.lineTo(380, 380);
-            ctx.lineWidth = 5;
-            ctx.stroke();
-            ctx.beginPath();
-            ctx.moveTo(380, 220);
-            ctx.lineTo(220, 380);
-            ctx.lineWidth = 5;
-            ctx.stroke();
+        if (sqFive == null) {
 
-            //Checking if the other two squares are marked and player wins
-            if (sqFour == "red" && sqSix == "red") {
-                alert("Player X has won! Add the points to the scores!")
-                document.getElementById("pointBtn").addEventListener("click", addPointsRed);
-                pointsToRed = "red";
-                return
-            }
-            if (sqTwo == "red" && sqEight == "red") {
-                alert("Player X has won! Add the points to the scores!")
-                document.getElementById("pointBtn").addEventListener("click", addPointsRed);
-                pointsToRed = "red";
-                return
-            }
-            if (sqOne == "red" && sqNine == "red") {
-                alert("Player X has won! Add the points to the scores!")
-                document.getElementById("pointBtn").addEventListener("click", addPointsRed);
-                pointsToRed = "red";
-                return
-            }
-            if (sqThree == "red" && sqSeven == "red") {
-                alert("Player X has won! Add the points to the scores!")
-                document.getElementById("pointBtn").addEventListener("click", addPointsRed);
-                pointsToRed = "red";
-                return
-            }
+            //Printing X in the fifth square
+            if (x > 200 && x < 400 && y > 200 && y < 400) {
+                ctx.strokeStyle = "red";
+                ctx.beginPath();
+                ctx.moveTo(230, 220);
+                ctx.lineTo(380, 380);
+                ctx.lineWidth = 5;
+                ctx.stroke();
+                ctx.beginPath();
+                ctx.moveTo(380, 220);
+                ctx.lineTo(220, 380);
+                ctx.lineWidth = 5;
+                ctx.stroke();
 
-            document.getElementById("playerO").style.fontSize = "50px";
-            document.getElementById("playerX").style.fontSize = "30px";
-            sqFive = "red";
-            player = "o";
-            return
+                //Checking if the other two squares are marked and player wins
+                if (sqFour == "red" && sqSix == "red") {
+                    alert("Player X has won! Add the points to the scores!")
+                    document.getElementById("pointBtn").addEventListener("click", addPointsRed);
+                    pointsToRed = "red";
+                    return
+                }
+                if (sqTwo == "red" && sqEight == "red") {
+                    alert("Player X has won! Add the points to the scores!")
+                    document.getElementById("pointBtn").addEventListener("click", addPointsRed);
+                    pointsToRed = "red";
+                    return
+                }
+                if (sqOne == "red" && sqNine == "red") {
+                    alert("Player X has won! Add the points to the scores!")
+                    document.getElementById("pointBtn").addEventListener("click", addPointsRed);
+                    pointsToRed = "red";
+                    return
+                }
+                if (sqThree == "red" && sqSeven == "red") {
+                    alert("Player X has won! Add the points to the scores!")
+                    document.getElementById("pointBtn").addEventListener("click", addPointsRed);
+                    pointsToRed = "red";
+                    return
+                }
+
+                document.getElementById("playerO").style.fontSize = "50px";
+                document.getElementById("playerX").style.fontSize = "30px";
+                sqFive = "red";
+                player = "o";
+                return
+            }
         }
     }
 
     if (player == "o") {
 
-        //Printing O in the fifth square
-        if (x > 200 && x < 400 && y > 200 && y < 400) {
-            ctx.beginPath();
-            ctx.arc(300, 300, 80, 2 * Math.PI, false);
-            ctx.fillStyle = "blue";
-            ctx.fill();
-            ctx.beginPath();
-            ctx.arc(300, 300, 70, 2 * Math.PI, false);
-            ctx.fillStyle = "black";
-            ctx.fill();
+        if (sqFive == null) {
 
-            //Checking if the other two squares are marked and player wins
-            if (sqFour == "blue" && sqSix == "blue") {
-                alert("Player O has won! Add the points to the scores!")
-                document.getElementById("pointBtn").addEventListener("click", addPointsBlue);
-                pointsToBlue = "blue";
-                return
-            }
+            //Printing O in the fifth square
+            if (x > 200 && x < 400 && y > 200 && y < 400) {
+                ctx.beginPath();
+                ctx.arc(300, 300, 80, 2 * Math.PI, false);
+                ctx.fillStyle = "blue";
+                ctx.fill();
+                ctx.beginPath();
+                ctx.arc(300, 300, 70, 2 * Math.PI, false);
+                ctx.fillStyle = "black";
+                ctx.fill();
 
-            if (sqTwo == "blue" && sqEight == "blue") {
-                alert("Player O has won! Add the points to the scores!")
-                document.getElementById("pointBtn").addEventListener("click", addPointsBlue);
-                pointsToBlue = "blue";
-                return
-            }
-            if (sqOne == "blue" && sqNine == "blue") {
-                alert("Player O has won! Add the points to the scores!")
-                document.getElementById("pointBtn").addEventListener("click", addPointsBlue);
-                pointsToBlue = "blue";
-                return
-            }
-            if (sqThree == "blue" && sqSeven == "blue") {
-                alert("Player O has won! Add the points to the scores!")
-                document.getElementById("pointBtn").addEventListener("click", addPointsBlue);
-                pointsToBlue = "blue";
-                return
-            }
+                //Checking if the other two squares are marked and player wins
+                if (sqFour == "blue" && sqSix == "blue") {
+                    alert("Player O has won! Add the points to the scores!")
+                    document.getElementById("pointBtn").addEventListener("click", addPointsBlue);
+                    pointsToBlue = "blue";
+                    return
+                }
 
-            document.getElementById("playerX").style.fontSize = "50px";
-            document.getElementById("playerO").style.fontSize = "30px";
-            sqFive = "blue";
-            player = "x";
-            return
+                if (sqTwo == "blue" && sqEight == "blue") {
+                    alert("Player O has won! Add the points to the scores!")
+                    document.getElementById("pointBtn").addEventListener("click", addPointsBlue);
+                    pointsToBlue = "blue";
+                    return
+                }
+                if (sqOne == "blue" && sqNine == "blue") {
+                    alert("Player O has won! Add the points to the scores!")
+                    document.getElementById("pointBtn").addEventListener("click", addPointsBlue);
+                    pointsToBlue = "blue";
+                    return
+                }
+                if (sqThree == "blue" && sqSeven == "blue") {
+                    alert("Player O has won! Add the points to the scores!")
+                    document.getElementById("pointBtn").addEventListener("click", addPointsBlue);
+                    pointsToBlue = "blue";
+                    return
+                }
+
+                document.getElementById("playerX").style.fontSize = "50px";
+                document.getElementById("playerO").style.fontSize = "30px";
+                sqFive = "blue";
+                player = "x";
+                return
+            }
         }
     }
 
     if (player == "x") {
 
-        //Printing X in the sixth square
-        if (x > 400 && x < 600 && y > 200 && y < 400) {
-            ctx.strokeStyle = "red";
-            ctx.beginPath();
-            ctx.moveTo(420, 220);
-            ctx.lineTo(570, 380);
-            ctx.lineWidth = 5;
-            ctx.stroke();
-            ctx.beginPath();
-            ctx.moveTo(570, 220);
-            ctx.lineTo(420, 380);
-            ctx.lineWidth = 5;
-            ctx.stroke();
+        if (sqSix == null) {
 
-            //Checking if the other two squares are marked and player wins
-            if (sqFour == "red" && sqFive == "red") {
-                alert("Player X has won! Add the points to the scores!")
-                document.getElementById("pointBtn").addEventListener("click", addPointsRed);
-                pointsToRed = "red";
+            //Printing X in the sixth square
+            if (x > 400 && x < 600 && y > 200 && y < 400) {
+                ctx.strokeStyle = "red";
+                ctx.beginPath();
+                ctx.moveTo(420, 220);
+                ctx.lineTo(570, 380);
+                ctx.lineWidth = 5;
+                ctx.stroke();
+                ctx.beginPath();
+                ctx.moveTo(570, 220);
+                ctx.lineTo(420, 380);
+                ctx.lineWidth = 5;
+                ctx.stroke();
+
+                //Checking if the other two squares are marked and player wins
+                if (sqFour == "red" && sqFive == "red") {
+                    alert("Player X has won! Add the points to the scores!")
+                    document.getElementById("pointBtn").addEventListener("click", addPointsRed);
+                    pointsToRed = "red";
+                    return
+                }
+                if (sqThree == "red" && sqNine == "red") {
+                    alert("Player X has won! Add the points to the scores!")
+                    document.getElementById("pointBtn").addEventListener("click", addPointsRed);
+                    pointsToRed = "red";
+                    return
+                }
+
+                document.getElementById("playerO").style.fontSize = "50px";
+                document.getElementById("playerX").style.fontSize = "30px";
+                sqSix = "red";
+                player = "o";
                 return
             }
-            if (sqThree == "red" && sqNine == "red") {
-                alert("Player X has won! Add the points to the scores!")
-                document.getElementById("pointBtn").addEventListener("click", addPointsRed);
-                pointsToRed = "red";
-                return
-            }
-
-            document.getElementById("playerO").style.fontSize = "50px";
-            document.getElementById("playerX").style.fontSize = "30px";
-            sqSix = "red";
-            player = "o";
-            return
         }
     }
 
     if (player == "o") {
 
-        //Printing O in the sixth square
-        if (x > 400 && x < 600 && y > 200 && y < 400) {
-            ctx.beginPath();
-            ctx.arc(500, 300, 80, 2 * Math.PI, false);
-            ctx.fillStyle = "blue";
-            ctx.fill();
-            ctx.beginPath();
-            ctx.arc(500, 300, 70, 2 * Math.PI, false);
-            ctx.fillStyle = "black";
-            ctx.fill();
+        if (sqSix == null) {
 
-            //Checking if the other two squares are marked and player wins
-            if (sqFour == "blue" && sqFive == "blue") {
-                alert("Player O has won! Add the points to the scores!")
-                document.getElementById("pointBtn").addEventListener("click", addPointsBlue);
-                pointsToBlue = "blue";
+            //Printing O in the sixth square
+            if (x > 400 && x < 600 && y > 200 && y < 400) {
+                ctx.beginPath();
+                ctx.arc(500, 300, 80, 2 * Math.PI, false);
+                ctx.fillStyle = "blue";
+                ctx.fill();
+                ctx.beginPath();
+                ctx.arc(500, 300, 70, 2 * Math.PI, false);
+                ctx.fillStyle = "black";
+                ctx.fill();
+
+                //Checking if the other two squares are marked and player wins
+                if (sqFour == "blue" && sqFive == "blue") {
+                    alert("Player O has won! Add the points to the scores!")
+                    document.getElementById("pointBtn").addEventListener("click", addPointsBlue);
+                    pointsToBlue = "blue";
+                    return
+                }
+                if (sqThree == "blue" && sqNine == "blue") {
+                    alert("Player O has won! Add the points to the scores!")
+                    document.getElementById("pointBtn").addEventListener("click", addPointsBlue);
+                    pointsToBlue = "blue";
+                    return
+                }
+
+                document.getElementById("playerX").style.fontSize = "50px";
+                document.getElementById("playerO").style.fontSize = "30px";
+                sqSix = "blue";
+                player = "x";
                 return
             }
-            if (sqThree == "blue" && sqNine == "blue") {
-                alert("Player O has won! Add the points to the scores!")
-                document.getElementById("pointBtn").addEventListener("click", addPointsBlue);
-                pointsToBlue = "blue";
-                return
-            }
-
-            document.getElementById("playerX").style.fontSize = "50px";
-            document.getElementById("playerO").style.fontSize = "30px";
-            sqSix = "blue";
-            player = "x";
-            return
         }
     }
 
     if (player == "x") {
 
-        //Printing X in the seventh square
-        if (x < 200 && y > 400 && y < 600) {
-            ctx.strokeStyle = "red";
-            ctx.beginPath();
-            ctx.moveTo(30, 420);
-            ctx.lineTo(180, 570);
-            ctx.lineWidth = 5;
-            ctx.stroke();
-            ctx.beginPath();
-            ctx.moveTo(180, 420);
-            ctx.lineTo(30, 570);
-            ctx.lineWidth = 5;
-            ctx.stroke();
+        if (sqSeven == null) {
 
-            //Checking if the other two squares are marked and player wins
-            if (sqEight == "red" && sqNine == "red") {
-                alert("Player X has won! Add the points to the scores!")
-                document.getElementById("pointBtn").addEventListener("click", addPointsRed);
-                pointsToRed = "red";
-                return
-            }
-            if (sqOne == "red" && sqFour == "red") {
-                alert("Player X has won! Add the points to the scores!")
-                document.getElementById("pointBtn").addEventListener("click", addPointsRed);
-                pointsToRed = "red";
-                return
-            }
-            if (sqThree == "red" && sqFive == "red") {
-                alert("Player X has won! Add the points to the scores!")
-                document.getElementById("pointBtn").addEventListener("click", addPointsRed);
-                pointsToRed = "red";
-                return
-            }
+            //Printing X in the seventh square
+            if (x < 200 && y > 400 && y < 600) {
+                ctx.strokeStyle = "red";
+                ctx.beginPath();
+                ctx.moveTo(30, 420);
+                ctx.lineTo(180, 570);
+                ctx.lineWidth = 5;
+                ctx.stroke();
+                ctx.beginPath();
+                ctx.moveTo(180, 420);
+                ctx.lineTo(30, 570);
+                ctx.lineWidth = 5;
+                ctx.stroke();
 
-            document.getElementById("playerO").style.fontSize = "50px";
-            document.getElementById("playerX").style.fontSize = "30px";
-            sqSeven = "red";
-            player = "o";
-            return
+                //Checking if the other two squares are marked and player wins
+                if (sqEight == "red" && sqNine == "red") {
+                    alert("Player X has won! Add the points to the scores!")
+                    document.getElementById("pointBtn").addEventListener("click", addPointsRed);
+                    pointsToRed = "red";
+                    return
+                }
+                if (sqOne == "red" && sqFour == "red") {
+                    alert("Player X has won! Add the points to the scores!")
+                    document.getElementById("pointBtn").addEventListener("click", addPointsRed);
+                    pointsToRed = "red";
+                    return
+                }
+                if (sqThree == "red" && sqFive == "red") {
+                    alert("Player X has won! Add the points to the scores!")
+                    document.getElementById("pointBtn").addEventListener("click", addPointsRed);
+                    pointsToRed = "red";
+                    return
+                }
+
+                document.getElementById("playerO").style.fontSize = "50px";
+                document.getElementById("playerX").style.fontSize = "30px";
+                sqSeven = "red";
+                player = "o";
+                return
+            }
         }
     }
 
     if (player == "o") {
 
-        //Printing O in the seventh square
-        if (x < 200 && y > 400 && y < 600) {
-            ctx.beginPath();
-            ctx.arc(110, 490, 80, 2 * Math.PI, false);
-            ctx.fillStyle = "blue";
-            ctx.fill();
-            ctx.beginPath();
-            ctx.arc(110, 490, 70, 2 * Math.PI, false);
-            ctx.fillStyle = "black";
-            ctx.fill();
+        if (sqSeven == null) {
 
-            //Checking if the other two squares are marked and player wins
-            if (sqEight == "blue" && sqNine == "blue") {
-                alert("Player O has won! Add the points to the scores!")
-                document.getElementById("pointBtn").addEventListener("click", addPointsBlue);
-                pointsToBlue = "blue";
-                return
-            }
-            if (sqOne == "blue" && sqFour == "blue") {
-                alert("Player O has won! Add the points to the scores!")
-                document.getElementById("pointBtn").addEventListener("click", addPointsBlue);
-                pointsToBlue = "blue";
-                return
-            }
-            if (sqThree == "blue" && sqFive == "blue") {
-                alert("Player O has won! Add the points to the scores!")
-                document.getElementById("pointBtn").addEventListener("click", addPointsBlue);
-                pointsToBlue = "blue";
-                return
-            }
+            //Printing O in the seventh square
+            if (x < 200 && y > 400 && y < 600) {
+                ctx.beginPath();
+                ctx.arc(110, 490, 80, 2 * Math.PI, false);
+                ctx.fillStyle = "blue";
+                ctx.fill();
+                ctx.beginPath();
+                ctx.arc(110, 490, 70, 2 * Math.PI, false);
+                ctx.fillStyle = "black";
+                ctx.fill();
 
-            document.getElementById("playerX").style.fontSize = "50px";
-            document.getElementById("playerO").style.fontSize = "30px";
-            sqSeven = "blue";
-            player = "x";
-            return
+                //Checking if the other two squares are marked and player wins
+                if (sqEight == "blue" && sqNine == "blue") {
+                    alert("Player O has won! Add the points to the scores!")
+                    document.getElementById("pointBtn").addEventListener("click", addPointsBlue);
+                    pointsToBlue = "blue";
+                    return
+                }
+                if (sqOne == "blue" && sqFour == "blue") {
+                    alert("Player O has won! Add the points to the scores!")
+                    document.getElementById("pointBtn").addEventListener("click", addPointsBlue);
+                    pointsToBlue = "blue";
+                    return
+                }
+                if (sqThree == "blue" && sqFive == "blue") {
+                    alert("Player O has won! Add the points to the scores!")
+                    document.getElementById("pointBtn").addEventListener("click", addPointsBlue);
+                    pointsToBlue = "blue";
+                    return
+                }
+
+                document.getElementById("playerX").style.fontSize = "50px";
+                document.getElementById("playerO").style.fontSize = "30px";
+                sqSeven = "blue";
+                player = "x";
+                return
+            }
         }
     }
 
     if (player == "x") {
 
-        //Printing X in the eighth square
-        if (x > 200 && x < 400 && y > 400 && y < 600) {
-            ctx.strokeStyle = "red";
-            ctx.beginPath();
-            ctx.moveTo(230, 420);
-            ctx.lineTo(380, 570);
-            ctx.lineWidth = 5;
-            ctx.stroke();
-            ctx.beginPath();
-            ctx.moveTo(380, 420);
-            ctx.lineTo(220, 570);
-            ctx.lineWidth = 5;
-            ctx.stroke();
+        if (sqEight == null) {
 
-            //Checking if the other two squares are marked and player wins
-            if (sqSeven == "red" && sqNine == "red") {
-                alert("Player X has already won! Add the points to the scores!")
-                document.getElementById("pointBtn").addEventListener("click", addPointsRed);
-                pointsToRed = "red";
+            //Printing X in the eighth square
+            if (x > 200 && x < 400 && y > 400 && y < 600) {
+                ctx.strokeStyle = "red";
+                ctx.beginPath();
+                ctx.moveTo(230, 420);
+                ctx.lineTo(380, 570);
+                ctx.lineWidth = 5;
+                ctx.stroke();
+                ctx.beginPath();
+                ctx.moveTo(380, 420);
+                ctx.lineTo(220, 570);
+                ctx.lineWidth = 5;
+                ctx.stroke();
+
+                //Checking if the other two squares are marked and player wins
+                if (sqSeven == "red" && sqNine == "red") {
+                    alert("Player X has already won! Add the points to the scores!")
+                    document.getElementById("pointBtn").addEventListener("click", addPointsRed);
+                    pointsToRed = "red";
+                    return
+                }
+                if (sqTwo == "red" && sqFive == "red") {
+                    alert("Player X has won! Add the points to the scores!")
+                    document.getElementById("pointBtn").addEventListener("click", addPointsRed);
+                    pointsToRed = "red";
+                    return
+                }
+
+                document.getElementById("playerO").style.fontSize = "50px";
+                document.getElementById("playerX").style.fontSize = "30px";
+                sqEight = "red";
+                player = "o";
                 return
             }
-            if (sqTwo == "red" && sqFive == "red") {
-                alert("Player X has won! Add the points to the scores!")
-                document.getElementById("pointBtn").addEventListener("click", addPointsRed);
-                pointsToRed = "red";
-                return
-            }
-
-            document.getElementById("playerO").style.fontSize = "50px";
-            document.getElementById("playerX").style.fontSize = "30px";
-            sqEight = "red";
-            player = "o";
-            return
         }
     }
 
     if (player == "o") {
 
-        //Printing O in the eighth square
-        if (x > 200 && x < 400 && y > 400 && y < 600) {
-            ctx.beginPath();
-            ctx.arc(300, 490, 80, 2 * Math.PI, false);
-            ctx.fillStyle = "blue";
-            ctx.fill();
-            ctx.beginPath();
-            ctx.arc(300, 490, 70, 2 * Math.PI, false);
-            ctx.fillStyle = "black";
-            ctx.fill();
+        if (sqEight == null) {
 
-            //Checking if the other two squares are marked and player wins
-            if (sqSeven == "blue" && sqNine == "blue") {
-                alert("Player O has won! Add the points to the scores!")
-                document.getElementById("pointBtn").addEventListener("click", addPointsBlue);
-                pointsToBlue = "blue";
+            //Printing O in the eighth square
+            if (x > 200 && x < 400 && y > 400 && y < 600) {
+                ctx.beginPath();
+                ctx.arc(300, 490, 80, 2 * Math.PI, false);
+                ctx.fillStyle = "blue";
+                ctx.fill();
+                ctx.beginPath();
+                ctx.arc(300, 490, 70, 2 * Math.PI, false);
+                ctx.fillStyle = "black";
+                ctx.fill();
+
+                //Checking if the other two squares are marked and player wins
+                if (sqSeven == "blue" && sqNine == "blue") {
+                    alert("Player O has won! Add the points to the scores!")
+                    document.getElementById("pointBtn").addEventListener("click", addPointsBlue);
+                    pointsToBlue = "blue";
+                    return
+                }
+                if (sqTwo == "blue" && sqFive == "blue") {
+                    alert("Player O has won! Add the points to the scores!")
+                    document.getElementById("pointBtn").addEventListener("click", addPointsBlue);
+                    pointsToBlue = "blue";
+                    return
+                }
+
+                document.getElementById("playerX").style.fontSize = "50px";
+                document.getElementById("playerO").style.fontSize = "30px";
+                sqEight = "blue";
+                player = "x";
                 return
             }
-            if (sqTwo == "blue" && sqFive == "blue") {
-                alert("Player O has won! Add the points to the scores!")
-                document.getElementById("pointBtn").addEventListener("click", addPointsBlue);
-                pointsToBlue = "blue";
-                return
-            }
-
-            document.getElementById("playerX").style.fontSize = "50px";
-            document.getElementById("playerO").style.fontSize = "30px";
-            sqEight = "blue";
-            player = "x";
-            return
         }
     }
 
     if (player == "x") {
 
-        //Printing X in the ninth square
-        if (x > 400 && x < 600 && y > 400 && y < 600) {
-            ctx.strokeStyle = "red";
-            ctx.beginPath();
-            ctx.moveTo(420, 420);
-            ctx.lineTo(570, 570);
-            ctx.lineWidth = 5;
-            ctx.stroke();
-            ctx.beginPath();
-            ctx.moveTo(570, 420);
-            ctx.lineTo(420, 570);
-            ctx.lineWidth = 5;
-            ctx.stroke();
+        if (sqNine == null) {
 
-            //Checking if the other two squares are marked and player wins
-            if (sqSeven == "red" && sqEight == "red") {
-                alert("Player X has already won! Add the points to the scores!")
-                document.getElementById("pointBtn").addEventListener("click", addPointsRed);
-                pointsToRed = "red";
-                return
-            }
-            if (sqThree == "red" && sqSix == "red") {
-                alert("Player X has won! Add the points to the scores!")
-                document.getElementById("pointBtn").addEventListener("click", addPointsRed);
-                pointsToRed = "red";
-                return
-            }
-            if (sqOne == "red" && sqFive == "red") {
-                alert("Player X has won! Add the points to the scores!")
-                document.getElementById("pointBtn").addEventListener("click", addPointsRed);
-                pointsToRed = "red";
-                return
-            }
+            //Printing X in the ninth square
+            if (x > 400 && x < 600 && y > 400 && y < 600) {
+                ctx.strokeStyle = "red";
+                ctx.beginPath();
+                ctx.moveTo(420, 420);
+                ctx.lineTo(570, 570);
+                ctx.lineWidth = 5;
+                ctx.stroke();
+                ctx.beginPath();
+                ctx.moveTo(570, 420);
+                ctx.lineTo(420, 570);
+                ctx.lineWidth = 5;
+                ctx.stroke();
 
-            document.getElementById("playerO").style.fontSize = "50px";
-            document.getElementById("playerX").style.fontSize = "30px";
-            sqNine = "red";
-            player = "o";
-            return
+                //Checking if the other two squares are marked and player wins
+                if (sqSeven == "red" && sqEight == "red") {
+                    alert("Player X has already won! Add the points to the scores!")
+                    document.getElementById("pointBtn").addEventListener("click", addPointsRed);
+                    pointsToRed = "red";
+                    return
+                }
+                if (sqThree == "red" && sqSix == "red") {
+                    alert("Player X has won! Add the points to the scores!")
+                    document.getElementById("pointBtn").addEventListener("click", addPointsRed);
+                    pointsToRed = "red";
+                    return
+                }
+                if (sqOne == "red" && sqFive == "red") {
+                    alert("Player X has won! Add the points to the scores!")
+                    document.getElementById("pointBtn").addEventListener("click", addPointsRed);
+                    pointsToRed = "red";
+                    return
+                }
+
+                document.getElementById("playerO").style.fontSize = "50px";
+                document.getElementById("playerX").style.fontSize = "30px";
+                sqNine = "red";
+                player = "o";
+                return
+            }
         }
     }
 
     if (player == "o") {
 
-        //Printing O in the ninth square
-        if (x > 400 && x < 600 && y > 400 && y < 600) {
-            ctx.beginPath();
-            ctx.arc(500, 490, 80, 2 * Math.PI, false);
-            ctx.fillStyle = "blue";
-            ctx.fill();
-            ctx.beginPath();
-            ctx.arc(500, 490, 70, 2 * Math.PI, false);
-            ctx.fillStyle = "black";
-            ctx.fill();
+        if (sqNine == null) {
 
-            //Checking if the other two squares are marked and player wins
-            if (sqSeven == "blue" && sqEight == "blue") {
-                alert("Player O has won! Add the points to the scores!")
-                document.getElementById("pointBtn").addEventListener("click", addPointsBlue);
-                pointsToBlue = "blue";
-                return
-            }
-            if (sqThree == "blue" && sqSix == "blue") {
-                alert("Player O has won! Add the points to the scores!")
-                document.getElementById("pointBtn").addEventListener("click", addPointsBlue);
-                pointsToBlue = "blue";
-                return
-            }
-            if (sqOne == "blue" && sqFive == "blue") {
-                alert("Player O has won! Add the points to the scores!")
-                document.getElementById("pointBtn").addEventListener("click", addPointsBlue);
-                pointsToBlue = "blue";
-                return
-            }
+            //Printing O in the ninth square
+            if (x > 400 && x < 600 && y > 400 && y < 600) {
+                ctx.beginPath();
+                ctx.arc(500, 490, 80, 2 * Math.PI, false);
+                ctx.fillStyle = "blue";
+                ctx.fill();
+                ctx.beginPath();
+                ctx.arc(500, 490, 70, 2 * Math.PI, false);
+                ctx.fillStyle = "black";
+                ctx.fill();
 
-            document.getElementById("playerX").style.fontSize = "50px";
-            document.getElementById("playerO").style.fontSize = "30px";
-            sqNine = "blue";
-            player = "x";
-            return
+                //Checking if the other two squares are marked and player wins
+                if (sqSeven == "blue" && sqEight == "blue") {
+                    alert("Player O has won! Add the points to the scores!")
+                    document.getElementById("pointBtn").addEventListener("click", addPointsBlue);
+                    pointsToBlue = "blue";
+                    return
+                }
+                if (sqThree == "blue" && sqSix == "blue") {
+                    alert("Player O has won! Add the points to the scores!")
+                    document.getElementById("pointBtn").addEventListener("click", addPointsBlue);
+                    pointsToBlue = "blue";
+                    return
+                }
+                if (sqOne == "blue" && sqFive == "blue") {
+                    alert("Player O has won! Add the points to the scores!")
+                    document.getElementById("pointBtn").addEventListener("click", addPointsBlue);
+                    pointsToBlue = "blue";
+                    return
+                }
+
+                document.getElementById("playerX").style.fontSize = "50px";
+                document.getElementById("playerO").style.fontSize = "30px";
+                sqNine = "blue";
+                player = "x";
+                return
+            }
         }
     }
 }
